@@ -10,3 +10,22 @@ const fetchData = (apiEndPoint) => {
 };
 
 fetchData(jsonTypicode);
+
+const modernFetch = async (url) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(
+        "Fetch failed with response status: " + response.statusText
+      );
+    }
+
+    const json = await response.json();
+
+    console.log(json);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+modernFetch(jsonTypicode);
