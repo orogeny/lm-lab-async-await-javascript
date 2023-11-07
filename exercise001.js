@@ -12,3 +12,6 @@ const promise = new Promise((resolve, reject) => {
 });
 
 // Your solution(s) to exercise001 here!
+
+promise.then((resp) => console.log("Yay! Promise resolved with response: " + resp))
+.catch((err) => console.log("Boo. Promise rejected with response: " + err));
